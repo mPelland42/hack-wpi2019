@@ -1,7 +1,11 @@
 const path = require('path');
 
 module.exports = {
+<<<<<<< HEAD
     entry: './app/templates/form.js',
+=======
+    entry: './app/templates/Form.js',
+>>>>>>> 00ec2bb17356853936c6797751c4b43de6c5438e
     module: {
         rules: [
             {
