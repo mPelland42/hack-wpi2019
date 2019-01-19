@@ -24,6 +24,9 @@ def index():
 	user = mongo.db.userData.find({})[0]
 	return render_template('index.html', title="Home", user=user)
 
+@app.route('/form')
+def form():
+    return render_template('form.html')
 @github.tokengetter
 def get_github_token():
 	return session.get('github_token')
