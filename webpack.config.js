@@ -1,11 +1,10 @@
 const path = require('path');
 
 module.exports = {
-<<<<<<< HEAD
-    entry: './app/templates/form.js',
-=======
-    entry: './app/templates/Form.js',
->>>>>>> 00ec2bb17356853936c6797751c4b43de6c5438e
+    entry: {
+        form: './app/templates/form.js',
+        index: './app/templates/index.js'
+    },
     module: {
         rules: [
             {
@@ -33,7 +32,7 @@ module.exports = {
         extensions: ["*", ".js", ".jsx"]
     },
     output: {
-        filename: 'form-pack.js',
+        filename: '[name]-pack.js',
         path: path.resolve(__dirname, 'app/templates')
     },
     mode: 'development'
