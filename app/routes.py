@@ -3,7 +3,8 @@ from flask import render_template
 from flask_pymongo import PyMongo
 from app import app
 
-app.config["MONGO_URI"] = "mongodb://35.221.20.85:27018/ddc"
+#app.config["MONGO_URI"] = "mongodb://35.221.20.85:27018/ddc"
+app.config["MONGO_URI"] = "mongodb://localhost:27018/ddc"
 mongo = PyMongo(app)
 
 @app.route('/')
