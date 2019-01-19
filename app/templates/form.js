@@ -7,7 +7,7 @@ import {FormControl, FormGroup, ControlLabel, HelpBlock, Button} from "react-boo
 function FieldGroup({ id, label, help, ...props }) {
   return (
     <FormGroup controlId={id}>
-      <ControlLabel className="fieldgroup">{label}</ControlLabel>
+      <ControlLabel>{label}</ControlLabel>
       <FormControl {...props} />
       {help && <HelpBlock>{help}</HelpBlock>}
     </FormGroup>
@@ -24,12 +24,12 @@ const formInstance = (
     />
 
   <FormGroup controlId="formControlsTextarea">
-      <ControlLabel className="fieldgroup">Project Description</ControlLabel>
+      <ControlLabel>Project Description</ControlLabel>
       <FormControl componentClass="textarea" placeholder="Describe project here" />
     </FormGroup>
 
     <FormGroup controlId="formControlsSelectMultiple">
-      <ControlLabel className="fieldgroup">Languages & Skills</ControlLabel>
+      <ControlLabel>Languages & Skills</ControlLabel>
       <FormControl componentClass="select" multiple>
         <option value="c++">C++</option>
         <option value="c#">C#</option>
