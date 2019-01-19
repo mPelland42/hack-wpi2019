@@ -14,8 +14,8 @@ github = oauth.remote_app(
 	request_token_url=None,
     access_token_url='https://github.com/login/oauth/access_token',
     authorize_url='https://github.com/login/oauth/authorize',
-	consumer_key='5a8711955a7980c5b0b8',
-	consumer_secret='83a0374449e05b8424874f74b1f545b6d2154054'
+    consumer_key='key',
+    consumer_secret='secret'
 )
 
 @app.route('/')
