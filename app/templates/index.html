@@ -4,33 +4,132 @@
     <meta charset="UTF-8">
     <title>Flask React</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,700,800" rel="stylesheet">
+
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="/css/animate.css">
+    <!-- Icomoon Icon Fonts-->
+    <link rel="stylesheet" href="css/icomoon.css">
+    <!-- Bootstrap  -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+
+    <!-- Magnific Popup -->
+    <link rel="stylesheet" href="css/magnific-popup.css">
+
+    <!-- Owl Carousel  -->
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+
+    <!-- Theme style  -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Modernizr JS -->
+    <script src="js/modernizr-2.6.2.min.js"></script>
+    <!-- FOR IE9 below -->
+    <!--[if lt IE 9]>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+
+    </head>
     <!-- styles -->
   </head>
   <body>
-    <div class="container">
-      <h1>Flask React</h1>
-      <br>
-      <div id="content"></div>
-    </div>
+      <div class="fh5co-loader"></div>
+      <div id="page">
+        <div id="nav"></div>
+        <div id="header"></div>
+      </div>
     <!-- scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.1.0/react.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.1.0/react-dom.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.1.0/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.1.0/react-dom.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/JSXTransformer.js"></script>
     <script type="text/jsx">
 
       /*** @jsx React.DOM */
 
-      var realPython = React.createClass({
+      var nav = React.createClass({
         render: function() {
-          return (<h2>Greetings, from Real Python!</h2>);
+          return(
+            <nav className="fh5co-nav" role="navigation">
+
+              <div className="top-menu">
+                <div className="container">
+                  <div className="row">
+                    <div className="col-xs-4">
+                      <div id="fh5co-logo"><img src="https://img.icons8.com/doodle/48/000000/rubber-duck.png"></img><a href="index.html"> DuckDuckCode</a></div>
+                    </div>
+                    <div className="col-xs-8 text-right menu-1">
+                      <ul>
+                        <li className="active"><a href="index.html">Home</a></li>
+                        <li><a href="courses.html">Search Ducks</a></li>
+                        <li><a href="pricing.html">My Profile</a></li>
+                        <li><a href="contact.html">About</a></li>
+                        <li className="btn-cta"><a href="#"><span>Login</span></a></li>
+                        <li className="btn-cta"><a href="#"><span>Create an Account</span></a></li>
+                      </ul>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </nav>
+
+          );
+        }
+      });
+
+      var header = React.createClass({
+        render: function() {
+          return(
+            <header id="fh5co-header" className="fh5co-cover" role="banner" style={ {backgroundImage: 'url(images/img_bg_1.jpg)'} } data-stellar-background-ratio="0.5">
+              <div className="overlay"></div>
+              <div className="container">
+                <div className="row">
+                  <div className="col-md-8 col-md-offset-2 text-center">
+                    <div className="display-t">
+                      <div className="display-tc">
+                        <h1>Connecting Sad, Stuck Coders with Rubber Ducks</h1>
+                        <h2><i>Not Affiliated With DuckDuckGo</i></h2>
+                        <p><a className="btn btn-primary btn-lg btn-learn" href="#"><i className="icon-search"></i> Find a Duck</a> <a className="btn btn-primary btn-lg btn-video" href="#"><img src="https://img.icons8.com/ios-glyphs/48/000000/rubber-duck.png"></img> Be a Duck</a> <a className="btn btn-primary btn-lg bt-learn" href="#"><i className="icon-users"></i> Do Both</a></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </header>
+          );
         }
       });
 
       ReactDOM.render(
-        React.createElement(realPython, null),
-        document.getElementById('content')
+        React.createElement(nav, null),
+        document.getElementById('nav')
       );
 
+      ReactDOM.render(
+        React.createElement(header, null),
+        document.getElementById('header')
+      );
     </script>
+    <!-- jQuery -->
+	<script src="js/jquery.min.js"></script>
+	<!-- jQuery Easing -->
+	<script src="js/jquery.easing.1.3.js"></script>
+	<!-- Bootstrap -->
+	<script src="js/bootstrap.min.js"></script>
+	<!-- Waypoints -->
+	<script src="js/jquery.waypoints.min.js"></script>
+	<!-- Stellar Parallax -->
+	<script src="js/jquery.stellar.min.js"></script>
+	<!-- Carousel -->
+	<script src="js/owl.carousel.min.js"></script>
+	<!-- countTo -->
+	<script src="js/jquery.countTo.js"></script>
+	<!-- Magnific Popup -->
+	<script src="js/jquery.magnific-popup.min.js"></script>
+	<script src="js/magnific-popup-options.js"></script>
+	<!-- Main -->
+	<script src="js/main.js"></script>
   </body>
 </html>
