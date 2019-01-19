@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-    entry: './app/templates/Form.js',
+    entry: './app/templates/form.js',
     module: {
         rules: [
             {
