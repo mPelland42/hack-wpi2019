@@ -12,3 +12,7 @@ mongo = PyMongo(app)
 def index():
 	user = mongo.db.userData.find({})[0]
 	return render_template('index.html', title="Home", user=user)
+
+@app.route('/form')
+def form():
+    return render_template('form.html')
