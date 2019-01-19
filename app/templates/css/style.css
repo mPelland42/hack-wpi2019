@@ -122,13 +122,9 @@ h1, h2, h3, h4, h5, h6, figure {
   font-size: 14px;
 }
 .fh5co-nav #fh5co-logo {
-  font-size: 24px;
   margin: 0;
   padding: 0;
-  text-transform: uppercase;
-  font-weight: bold;
-  font-weight: 700;
-  font-family: "Work Sans", Arial, sans-serif;
+  width: 120%;
 }
 .fh5co-nav #fh5co-logo a span {
   color: #EA9215;
