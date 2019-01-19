@@ -7,3 +7,7 @@ from app import app
 def index():
 	user = {'username': 'matt'}
 	return render_template('index.html', title="Home", user=user)
+
+@app.route('/form')
+def form():
+    return render_template('form.html')
