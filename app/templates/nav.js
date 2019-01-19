@@ -29,9 +29,9 @@ class Nav extends React.Component {
                 <div className="container">
                   <div className="row">
                     <div className="col-xs-4">
-		      <span id="fh5co-logo"> <img src="images/logo_white.svg" height="100px" href="index.html"></img></span>
+		      <span id="fh5co-logo"> <img src="images/logo_white.svg" height="80px" href="index.html"></img></span>
                     </div>
-                    <div className="col-xs-8 text-right menu-1">
+                    <div className="col-xs-8 text-right menu-1 nav-menu">
                       <ul>
                         <li className="active"><a href="index.html">Home</a></li>
                         <li><a href="courses.html">Search Ducks</a></li>
