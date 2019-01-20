@@ -35,7 +35,7 @@ class Nav extends React.Component {
                       <ul>
                         <li className="active"><a href="index.html">Home</a></li>
                         <li><a href="courses.html">Search Ducks</a></li>
-                        { this.props.username ? <li><a href="pricing.html">My Profile</a></li> : '' }
+                        { this.props.username ? <li><a href="profile.html">My Profile</a></li> : '' }
                         <li><a href="contact.html">About</a></li>
                         { this.props.username ? '' : <li className="btn-cta"><a href="/login-github"><span><i className="fab fa-github"></i> Login with GitHub</span></a></li> }
                         { this.props.username ? <li><a><i className="fab fa-github"></i> Logged in as <b>{this.props.username}</b></a></li> : '' }
