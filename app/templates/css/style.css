@@ -264,21 +264,34 @@ h1, h2, h3, h4, h5, h6, figure {
   color: #fff !important;
 }
 
-#fh5co-header,
-#fh5co-counter,
-.fh5co-bg {
-  background-size: cover;
-  background-position: top center;
-  background-repeat: no-repeat;
-  position: relative;
+#down {
+    position: absolute;
+    top:85vh;
+    padding: 20px;
+    font-size: 2.5em;
+
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    text-align:center;
 }
 
-.fh5co-bg {
-  background-size: cover;
-  background-position: center center;
-  position: relative;
-  width: 100%;
-  float: left;
+#down:hover {
+    cursor: pointer;
+    background-color: #eee;
+    opacity: 0.3;
+}
+
+.fh5co-cover {
+    height: 100vh;
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;  
 }
 
 .fh5co-video {
@@ -337,15 +350,6 @@ h1, h2, h3, h4, h5, h6, figure {
   transform: scale(1.2);
 }
 
-.fh5co-cover {
-  height: 800px;
-  background-size: cover;
-  background-position: top center;
-  background-repeat: no-repeat;
-  position: relative;
-  float: left;
-  width: 100%;
-}
 .fh5co-cover .overlay {
   z-index: 0;
   position: absolute;
