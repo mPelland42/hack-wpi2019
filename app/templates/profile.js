@@ -2,6 +2,7 @@ import "./profile.html"
 import React from "react";
 import ReactDOM from 'react-dom';
 import Background from './images/ducky.jpg';
+import DuckCoin from './images/duckduckcoin.png'
 import {FormExample} from "./form.js"
 
 class Profile extends React.Component{
@@ -45,8 +46,8 @@ class Profile extends React.Component{
   renderTags(){
 	  return this.state.tags.map(function(tag){
 		 return (<div>
-			 	{tag} <button className="btn btn-danger btn-sm" style={ {float: 'right', marginRight: '10px'} } name={tag} onClick={this.deleteTag}> Delete Tag </button>
-			 </div>);
+			 	{tag} <button className="btn btn-danger btn-sm" style={ {float: 'right', marginRight: '10px', marginTop:'5px'} } name={tag} onClick={this.deleteTag}> Delete Tag </button>
+			 <div style={ {clear: 'both'} }></div></div>);
 	  }.bind(this));
   }
 
@@ -76,18 +77,19 @@ class Profile extends React.Component{
   render(){
 	  //list of all tags
 	  return (
-	  <div className="button"><h2>
+	  <div className="button" style={ {backgroundColor: 'rgba(200,200,200,0.7)', color: '#222' } }>
+		<h1 style={ {paddingTop: '50px', marginBottom: '35px'} }>
 	  {this.state.userName}'s Selected Specialties
-		  </h2><ul>
+		  </h1><ul style={ {marginTop: '20px'} }>
 		  	{this.renderTags()}
 		  </ul>
-		  <input type="text" value={this.state.newTag} onChange={this.updateNewTag.bind(this)} />
+		  <input type="text" style={ {verticalAlign: 'middle'} }value={this.state.newTag} onChange={this.updateNewTag.bind(this)} />
 		  <button className="btn btn-info btn-sm" onClick={this.saveNewTag.bind(this)}> Add Tag </button>
 		  <button className="btn btn-success btn-sm" onClick={this.saveChanges.bind(this)}> Save Changes </button>
 
-		  <div>
-		  You have {this.state.duckDuckCoins} Duck Duck Coins!
-		  Help other programmers out to earn more of this useless fake currency!
+		  <div style={ {paddingTop:'20px', marginBottom: '-15px'} }>
+		  You have </div> <span style={ {fontSize: '60px', verticalAlign: 'middle'} }> {this.state.duckDuckCoins}</span><img src={DuckCoin} height="175px" width="175px" /> 
+			<div style={ {paddingBottom: '20px', paddingRight: '20px', paddingLeft: '20px', marginTop: '-10px'} }>Duck Duck Coins! Help other programmers out to earn more of this useless fake currency!
 		  </div>
 	  </div>
   )
@@ -101,11 +103,13 @@ class Profile extends React.Component{
               <div className="overlay"></div>
               <div className="container">
                 <div className="row">
-                  <div className="col-md-8 col-md-offset-2 text-center">
-                    <div className="display-t">
-                      <div className="display-tc">
+                  <div className="col-md-8 col-md-offset-2 text-center" style={ {display: 'flex',
+		flexDirection: 'column',
+		justifyContent: 'center',
+		alignItems: 'center',
+		textAlign: 'center', minHeight: '100vh'}} >
+                    <div style={ {verticalAlign:'center'} }>
                         <Profile />
-                      </div>
                     </div>
                   </div>
                 </div>
