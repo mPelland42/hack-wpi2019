@@ -29,6 +29,17 @@ body {
   transition: 0.5s;
 }
 
+.button {
+  font-family: "Work Sans", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #828282;
+  background: #fff;
+  text-align: center;
+}
+
+
 .fieldgroup {
   color:#ffffff;
 }
@@ -264,21 +275,34 @@ h1, h2, h3, h4, h5, h6, figure {
   color: #fff !important;
 }
 
-#fh5co-header,
-#fh5co-counter,
-.fh5co-bg {
-  background-size: cover;
-  background-position: top center;
-  background-repeat: no-repeat;
-  position: relative;
+#down {
+    position: absolute;
+    top:85vh;
+    padding: 20px;
+    font-size: 2.5em;
+
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    text-align:center;
 }
 
-.fh5co-bg {
-  background-size: cover;
-  background-position: center center;
-  position: relative;
-  width: 100%;
-  float: left;
+#down:hover {
+    cursor: pointer;
+    background-color: #eee;
+    opacity: 0.3;
+}
+
+.fh5co-cover {
+    height: 100vh;
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;  
 }
 
 .fh5co-video {
@@ -337,16 +361,7 @@ h1, h2, h3, h4, h5, h6, figure {
   transform: scale(1.2);
 }
 
-.fh5co-cover {
-  height: 800px;
-  background-size: cover;
-  background-position: top center;
-  background-repeat: no-repeat;
-  position: relative;
-  float: left;
-  width: 100%;
-}
-.fh5co-cover .overlay {
+.fh5co-cover .overlay, .fh5co-cover-2 .overlay {
   z-index: 0;
   position: absolute;
   bottom: 0;
@@ -355,7 +370,7 @@ h1, h2, h3, h4, h5, h6, figure {
   right: 0;
   background: rgba(0, 0, 0, 0.4);
 }
-.fh5co-cover > .fh5co-container {
+.fh5co-cover > .fh5co-container, .fh5co-cover-2 > .fh5co-container {
   position: relative;
   z-index: 10;
 }
@@ -365,7 +380,8 @@ h1, h2, h3, h4, h5, h6, figure {
   }
 }
 .fh5co-cover .display-t,
-.fh5co-cover .display-tc {
+.fh5co-cover .display-tc,
+.fh5co-cover-2 .display-tc{
   z-index: 9;
   height: 700px;
   display: table;
@@ -401,7 +417,8 @@ h1, h2, h3, h4, h5, h6, figure {
 
 #fh5co-header .display-tc,
 #fh5co-counter .display-tc,
-.fh5co-cover .display-tc {
+.fh5co-cover .display-tc,
+.fh5co-cover-2 .display-tc {
   display: table-cell !important;
   vertical-align: middle;
 }
@@ -445,6 +462,11 @@ h1, h2, h3, h4, h5, h6, figure {
   border: none !important;
   font-size: 18px;
 }
+
+.fh5co-cover-2 .display-tc .btn {
+  margin-left:5px;
+}
+
 #fh5co-header .display-tc .btn.btn-video,
 #fh5co-counter .display-tc .btn.btn-video,
 .fh5co-cover .display-tc .btn.btn-video {

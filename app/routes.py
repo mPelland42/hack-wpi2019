@@ -64,7 +64,7 @@ def saveTags():
 	print(request.data)
 	data = json.loads(request.data)
 	mongo.db.userData.update_one({"userName": data["userName"]}, {"$set": data})
-	return "fuck off"
+	return "duck off"
 
 @app.route('/userInfo', methods = ['GET'])
 def userInfo():

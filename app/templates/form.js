@@ -15,7 +15,7 @@ function FieldGroup({ id, label, help, ...props }) {
 }
 
 const formInstance = (
-  <form>
+  <form className="fieldgroup">
     <FieldGroup
       id="formControlsText"
       type="text"
@@ -88,3 +88,5 @@ class FormExample extends React.Component {
 
 ReactDOM.render(<BackgroundImg />, document.getElementById('bimg'));
 //ReactDOM.render(<FormExample />, document.getElementById('form'));
+
+export { FormExample };
