@@ -12,10 +12,10 @@ oauth = OAuth()
 github = oauth.remote_app(
 	'github', base_url='',
 	request_token_url=None,
-    access_token_url='https://github.com/login/oauth/access_token',
-    authorize_url='https://github.com/login/oauth/authorize',
-    consumer_key='key',
-    consumer_secret='secret'
+	access_token_url='https://github.com/login/oauth/access_token',
+	authorize_url='https://github.com/login/oauth/authorize',
+	consumer_key='5a8711955a7980c5b0b8',
+   consumer_secret='83a0374449e05b8424874f74b1f545b6d2154054'
 )
 
 @app.route('/')
@@ -52,10 +52,9 @@ def oauth_authorized(resp):
 
 @app.route('/form')
 def form():
-    return render_template('form.html')
-
+  return render_template('form.html')
 
 @app.route('/login-github')
 def login():
-	return github.authorize(callback='http://localhost:5000/github-authorized') #callback=url_of('oauth_authorized')
+  return github.authorize(callback='http://localhost:5000/github-authorized') #callback=url_of('oauth_authorized')
 

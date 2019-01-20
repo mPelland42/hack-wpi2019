@@ -1,6 +1,8 @@
 import React from "react";
 import ReactDOM from 'react-dom';
 import Background from './images/ducky.jpg';
+import Duckon from './images/duck.png'
+
 import {FormControl, FormGroup, ControlLabel, HelpBlock} from "react-bootstrap"
 
 
@@ -28,9 +30,9 @@ class Header extends React.Component {
           <div className="col-md-8 col-md-offset-2 text-center">
             <div className="display-t">
               <div className="display-tc">
-                <h1>Connecting Sad, Stuck Coders with Rubber Ducks</h1>
-                <h2><i>Not Affiliated With DuckDuckGo</i></h2>
-                <p><a className="btn btn-primary btn-lg btn-learn" href="#"><i className="icon-search"></i> Find a Duck</a> <a className="btn btn-primary btn-lg btn-video" href="#"><img src="https://img.icons8.com/ios-glyphs/48/000000/rubber-duck.png"></img> Be a Duck</a> <a className="btn btn-primary btn-lg bt-learn" href="#"><i className="icon-users"></i> Do Both</a></p>
+                <h1>Frustrated coders in your area want to duck</h1>
+                <h2><i>Pair up with another programmer and use rubber duck debugging to solve your problems faster!</i></h2>
+                <p><a className="btn btn-primary btn-lg btn-learn" href="#"><i className="icon-search"></i> Find a DuckBuddy™</a> <a className="btn btn-primary btn-lg btn-video" href="#"><img src={Duckon}></img>  Get Ducked</a></p>
               </div>
             </div>
           </div>
