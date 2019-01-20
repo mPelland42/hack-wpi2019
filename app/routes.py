@@ -2,6 +2,7 @@ from flask import render_template, session, url_for, request, redirect
 from flask_pymongo import PyMongo
 from flask_oauth import OAuth
 from app import app
+import json
 
 app.config["MONGO_URI"] = "mongodb://35.221.20.85:27018/ddc"
 #app.config["SERVER_NAME"] = "https://duckduckcode.net"
@@ -58,3 +59,22 @@ def form():
 def login():
   return github.authorize(callback='http://localhost:5000/github-authorized') #callback=url_of('oauth_authorized')
 
+@app.route('/saveTags', methods = ['POST'])
+def saveTags():
+	print(request.data)
+	data = json.loads(request.data)
+	mongo.db.userData.update_one({"userName": data["userName"]}, {"$set": data})
+	return "fuck off"
+
+@app.route('/userInfo', methods = ['GET'])
+def userInfo():
+	print("returning user info")
+	userData = mongo.db.userData.find({"userName" : session['github_user']})[0]
+	userData.pop("_id")
+	print(userData);
+	return json.dumps(userData);
+
+@app.route('/profile')
+def profile():
+	#user = session['github_user']
+	return render_template('profile.html', title="profile")
