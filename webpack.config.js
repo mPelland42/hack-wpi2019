@@ -4,7 +4,8 @@ module.exports = {
     entry: {
         form: './app/templates/form.js',
         index: './app/templates/index.js',
-		profile: './app/templates/profile.js'
+		profile: './app/templates/profile.js',
+		waitingRoom: './app/templates/waitingRoom.js'
     },
     module: {
         rules: [
