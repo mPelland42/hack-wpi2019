@@ -3,7 +3,8 @@ const path = require('path');
 module.exports = {
     entry: {
         form: './app/templates/form.js',
-        index: './app/templates/index.js'
+        index: './app/templates/index.js',
+		profile: './app/templates/profile.js'
     },
     module: {
         rules: [
