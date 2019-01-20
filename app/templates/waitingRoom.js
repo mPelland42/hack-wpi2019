@@ -22,7 +22,11 @@ class WaitingRoom extends React.Component{
 		console.log("response received");
 		var response = JSON.parse(this.xhr.responseText);
 		console.log("url is " + response.url);
-		this.setState({status : "showButton", viewUrl: response.url});
+        var url = response.url;
+        console.log("url is " + url);
+        url = url.replace("http", "https");
+        console.log(url);
+		this.setState({status : "showButton", viewUrl: url});
 	}
 
 	viewScreen(){

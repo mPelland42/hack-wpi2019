@@ -80,7 +80,8 @@ class FormExample extends React.Component {
   		this.xhr.onreadystatechange = this.linkMade.bind(this);
 		this.xhr.setRequestHeader("accountid", "mpelland42");
 		this.xhr.setRequestHeader("authtoken", "JjvVEXNKEE") ;
-		this.xhr.send();
+        this.xhr.setRequestHeader("isSecure", "true");
+        this.xhr.send();
 	  }
 
 	  linkMade(){
