@@ -3,6 +3,7 @@
 import React from "react";
 import ReactDOM from 'react-dom';
 import Background from './images/ducky.jpg';
+import {Nav} from './nav.js'
 
 class WaitingRoom extends React.Component{
 	constructor(props){
@@ -40,12 +41,13 @@ class WaitingRoom extends React.Component{
 
 	render(){
 		return(
-			<div style={ {"width": "100%", "height": "100%"} }>
+			<div style={ {"width": "100%", "height": "100vh"} }> 
+			<Nav />
 			{
 				this.state.status == "viewingScreen" ?
 				<div>
 				<button onClick={this.goHome}> Go Home </button>
-				<iframe src={this.state.viewUrl} style={ {"width": "100%", "height": "100%"} }> </iframe>
+				<iframe src={this.state.viewUrl} style={ {"width": "100%", "height": "100vh"} }> </iframe>
 				</div>
 				:
 
