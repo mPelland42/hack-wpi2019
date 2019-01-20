@@ -1,6 +1,8 @@
 import "./profile.html"
 import React from "react";
 import ReactDOM from 'react-dom';
+import Background from './images/ducky.jpg';
+import {FormExample} from "./form.js"
 
 class Profile extends React.Component{
 
@@ -43,8 +45,7 @@ class Profile extends React.Component{
   renderTags(){
 	  return this.state.tags.map(function(tag){
 		 return (<div>
-			 	<button name={tag} onClick={this.deleteTag}> Delete Tag </button>
-				<div> {tag} </div>
+			 	{tag} <button className="btn btn-danger btn-sm" style={ {float: 'right', marginRight: '10px'} } name={tag} onClick={this.deleteTag}> Delete Tag </button>
 			 </div>);
 	  }.bind(this));
   }
@@ -75,14 +76,14 @@ class Profile extends React.Component{
   render(){
 	  //list of all tags
 	  return (
-	  <div>
+	  <div className="button"><h2>
 	  {this.state.userName}'s Selected Specialties
-		  <ul>
+		  </h2><ul>
 		  	{this.renderTags()}
 		  </ul>
 		  <input type="text" value={this.state.newTag} onChange={this.updateNewTag.bind(this)} />
-		  <button onClick={this.saveNewTag.bind(this)}> Add Tag </button>
-		  <button onClick={this.saveChanges.bind(this)}> Save Changes </button>
+		  <button className="btn btn-info btn-sm" onClick={this.saveNewTag.bind(this)}> Add Tag </button>
+		  <button className="btn btn-success btn-sm" onClick={this.saveChanges.bind(this)}> Save Changes </button>
 
 		  <div>
 		  You have {this.state.duckDuckCoins} Duck Duck Coins!
@@ -92,5 +93,29 @@ class Profile extends React.Component{
   )
   }
 };
+  
+  class BackgroundImg extends React.Component {
+    render() {
+      return (
+        <header className="fh5co-cover-2" role="banner" style={ {backgroundImage: `url(${Background})`} } data-stellar-background-ratio="0.5">
+              <div className="overlay"></div>
+              <div className="container">
+                <div className="row">
+                  <div className="col-md-8 col-md-offset-2 text-center">
+                    <div className="display-t">
+                      <div className="display-tc">
+                        <Profile />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
-ReactDOM.render(<Profile />, document.getElementById("profile"));
+        </header>
+      );
+    }
+  }
+
+ReactDOM.render(<BackgroundImg />, document.getElementById('bimg'));
+
+//ReactDOM.render(<Profile />, document.getElementById("profile"));
