@@ -29,10 +29,6 @@ def index():
 def get_github_token():
 	return session.get('github_token')
 
-@app.route('/login-github')
-def login():
-	return github.authorize(callback='http://localhost:5000/github-authorized') #callback=url_of('oauth_authorized')
-
 @app.route('/github-authorized')
 @github.authorized_handler
 def oauth_authorized(resp):
@@ -56,4 +52,9 @@ def oauth_authorized(resp):
 
 @app.route('/form')
 def form():
-	return render_template('form.html')
+  return render_template('form.html')
+
+@app.route('/login-github')
+def login():
+  return github.authorize(callback='http://localhost:5000/github-authorized') #callback=url_of('oauth_authorized')
+
