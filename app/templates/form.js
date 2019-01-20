@@ -3,6 +3,7 @@ import "./form.html"
 import React from "react";
 import ReactDOM from 'react-dom';
 import Background from './images/ducky.jpg';
+
 class Form extends React.Component{
 
   //no props
@@ -104,10 +105,67 @@ class Form extends React.Component{
     </div>
   )
   }
+  
 };
   
   class BackgroundImg extends React.Component {
+
+	  constructor(props){
+		  super(props);
+		  this.state = {status: "setting up"};
+	  }
+
+	  startSharing(){
+		console.log("making the http call");
+		this.xhr = new XMLHttpRequest();
+  		this.xhr.open('POST', "https://api.screenleap.com/v2/screen-shares", true);
+  		this.xhr.onreadystatechange = this.linkMade.bind(this);
+		this.xhr.setRequestHeader("accountid", "mpelland42");
+		this.xhr.setRequestHeader("authtoken", "JjvVEXNKEE") ;
+		this.xhr.send();
+	  }
+
+	  linkMade(){
+		  var response = JSON.parse(this.xhr.responseText);
+		  console.log(response);
+		  var screenleap = new Screenleap();
+		  screenleap.startSharing("IN_BROWSER", response);
+		  this.xhr2 = new XMLHttpRequest();
+    	  this.xhr2.open('POST', "/ducking", true);
+		  console.log(response.viewerUrl);
+  		  this.xhr2.send(JSON.stringify(response));
+	  }
+
+	  getCorrectView(){
+		  if (this.state.status == "setting up"){
+			  return (
+				  <header id="fh5co-header" className="fh5co-cover" role="banner" style={ {backgroundImage: `url(${Background})`} } data-stellar-background-ratio="0.5">
+		                <div className="overlay"></div>
+		                <div className="container">
+		                  <div className="row">
+		                    <div className="col-md-8 col-md-offset-2 text-center">
+		                      <div className="display-t">
+		                        <div className="display-tc">
+		                          <FormExample />
+		  						<Button type="submit" onClick={this.startSharing.bind(this)}>Submit</Button>
+		                        </div>
+		                      </div>
+		                    </div>
+		                  </div>
+		                </div>
+		          </header>
+			  )
+		  }
+		  else if(this.state.status == "waiting for connection"){
+			  <div class="fh5co-loader"></div>
+		  }
+		  else{
+			  <div> Sharing Screen </div>
+		  }
+	  }
+
     render() {
+		//var view = this.getCorrectView()
       return (
         <header className="fh5co-cover-2" role="banner" style={ {backgroundImage: `url(${Background})`} } data-stellar-background-ratio="0.5">
               <div className="overlay"></div>

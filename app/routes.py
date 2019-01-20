@@ -3,6 +3,7 @@ from flask_pymongo import PyMongo
 from flask_oauth import OAuth
 from app import app
 import json
+import time
 
 app.config["MONGO_URI"] = "mongodb://35.221.20.85:27018/ddc"
 #app.config["SERVER_NAME"] = "https://duckduckcode.net"
@@ -55,6 +56,10 @@ def oauth_authorized(resp):
 def form():
   return render_template('form.html')
 
+@app.route('/waitingRoom')
+def waitingRoom():
+	return render_template('waitingRoom.html')
+
 @app.route('/login-github')
 def login():
   return github.authorize(callback='http://localhost:5000/github-authorized') #callback=url_of('oauth_authorized')
@@ -78,3 +83,23 @@ def userInfo():
 def profile():
 	#user = session['github_user']
 	return render_template('profile.html', title="profile")
+
+@app.route('/partner', methods = ['GET'])
+def partner():
+	while(True):
+		print("in query loop");
+		doc = mongo.db.requests.find_one({"open" : True})
+		if doc != None:
+			mongo.db.requests.update_one({"_id" : doc["_id"]}, {"$set" : {"open" : False}})
+			doc.pop("_id")
+			return json.dumps(doc)
+		else:
+			time.sleep(5)
+
+@app.route('/ducking', methods = ['POST'])
+def ducking():
+	print(request.data)
+	data = json.loads(request.data)
+	if mongo.db.requests.find_one({"url": data["viewerUrl"]}) == None:
+		mongo.db.requests.insert_one({"url" : data["viewerUrl"], "open" : True})
+	return "duck off"
