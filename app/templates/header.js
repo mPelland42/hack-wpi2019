@@ -30,8 +30,8 @@ class Header extends React.Component {
           <div className="col-md-8 col-md-offset-2 text-center">
             <div className="display-t">
               <div className="display-tc">
-                <h1>Frustrated coders in your area want to duck</h1>
-                <h2><i>Pair up with another programmer and use rubber duck debugging to solve your problems faster!</i></h2>
+                <h1>Frustrated Programmers in Your Area Want to Duck</h1>
+                <h2><i>Pair up with another programmer and use <b>Rubber Duck Debugging</b> to solve your problems faster!</i></h2>
                 <p><a className="btn btn-primary btn-lg btn-learn" href="#"><i className="icon-search"></i> Find a DuckBuddy™</a> <a className="btn btn-primary btn-lg btn-video" href="#"><img src={Duckon}></img>  Get Ducked</a></p>
               </div>
             </div>
